@@ -8,7 +8,6 @@ For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
 let numbers: [Int] = [10, 15, 3, 7]
 let sum: Int = 17
 
-
 // **** Method 1 Start
 // **** Sorting
 // ****
@@ -42,7 +41,6 @@ while(startPointer < endPointer) {
 // ****
 
 
-
 // **** Method 2 Start
 // **** Hashing
 // ****
@@ -50,16 +48,20 @@ while(startPointer < endPointer) {
 var hash: [String: Int] = [:]
 
 for i in 0..<numbers.count {
-    let otherNumber = sum - numbers[i]
+    let num = numbers[i]
+    
+    let otherNumber = sum - num
+    
     if hash["\(otherNumber)"] == 1 {
         print("\(numbers[i]),\(otherNumber)")
     }
     
-    hash["\(otherNumber)"]  = 1
+    hash["\(num)"]  = 1
     
 }
 
 // **** Method 2 End
 // **** Hashing
 // ****
+
 
